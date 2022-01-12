@@ -2,8 +2,6 @@
 //  SceneDelegate.swift
 //  BWeather
 //
-//  Created by 13 Denis on 12/01/2022.
-//
 
 import UIKit
 

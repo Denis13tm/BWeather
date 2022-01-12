@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Location List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LocationListViewController" customModule="BWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hW-Xd-XG2">
+                                <rect key="frame" x="0.0" y="734" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="qv8-yk-Q76"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Edit" id="rtm-Vy-gjG">
+                                        <connections>
+                                            <action selector="editBtnPressed:" destination="BYZ-38-t0r" id="AnP-LH-0XY"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="e99-d2-ZX0"/>
+                                    <barButtonItem title="Add Location" id="r8n-AL-CvG">
+                                        <connections>
+                                            <action selector="addBtnPressed:" destination="BYZ-38-t0r" id="Y5V-Wf-Seb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Njk-6n-tVZ">
+                                <rect key="frame" x="0.0" y="44" width="375" height="690"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="3ai-N1-uh6">
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3ai-N1-uh6" id="MaK-N8-gNL">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="R6Y-Qk-yaU"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="PCM-yz-ytQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Njk-6n-tVZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="H9h-6q-wcW"/>
+                            <constraint firstItem="0hW-Xd-XG2" firstAttribute="top" secondItem="Njk-6n-tVZ" secondAttribute="bottom" id="LpO-NQ-cwW"/>
+                            <constraint firstItem="Njk-6n-tVZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bxz-ca-GoG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Njk-6n-tVZ" secondAttribute="trailing" id="f7Q-ei-Spb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0hW-Xd-XG2" secondAttribute="bottom" id="fxA-n3-eQY"/>
+                            <constraint firstItem="0hW-Xd-XG2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sAu-mf-fGI"/>
+                            <constraint firstItem="0hW-Xd-XG2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="t61-z8-xba"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addBarBtn" destination="r8n-AL-CvG" id="cZk-ne-mzg"/>
+                        <outlet property="editBarBtn" destination="rtm-Vy-gjG" id="avU-xQ-xiD"/>
+                        <outlet property="tableView" destination="Njk-6n-tVZ" id="AeL-iu-STF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23.199999999999999" y="67.241379310344826"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
